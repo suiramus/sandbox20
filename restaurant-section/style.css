@@ -103,18 +103,33 @@ a.more {
 	
 	} /* 1024px media end */
 
+	@media screen and (max-width: 540px) {
+	
+		.row-item {
+			width: calc(calc(100% / 1) - 2rem);
+			padding-top: 3rem;
+		}
+	
+	} /* 540px media end */
+
+
+	.row-item-img {
+		max-width: 250px;
+		border-radius: 50%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
 
 	.row-item img {
-		display: block;
 		max-width: 100%;
 		height: auto;
-		border-radius: 50%;
+		transform: scale(1,1);
 		transition: all .3s;
 	}
 
 	.row-item:hover img {
 		/*background: rgba(132, 76, 15, .8);*/
-		transform: rotate(10deg);
+		transform: scale(1.1,1.1);
 	}
 
 
