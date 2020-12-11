@@ -29,7 +29,8 @@ img, video {
 =================================================== */
 
 section.presentation {
-	background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/section-presentation-bg.jpg");
+	/*background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/section-presentation-bg.jpg");*/
+	background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("images/takeaway-bg2.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -41,7 +42,7 @@ section.presentation {
 	min-height: 600px;
 	max-width: 1140px;
 	margin: 0 auto;
-	padding: 4rem 2rem 6rem;
+	padding: 6rem 2rem 6rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -59,11 +60,12 @@ a.more {
 	.section-title {
 		text-align: center;
 		color: #FFF;
-		font-size: 3.3rem;
+		font-size: 3.6rem;
 		font-style: italic;
 		line-height: 1.1;
 		letter-spacing: 1px;
 		margin: 20px 0 20px;
+		text-shadow: 2px 2px 4px rgba(50, 50, 50, .7);
 	}
 
 	.section-subtitle {
@@ -72,6 +74,7 @@ a.more {
 		line-height: 1.02;
 		font-style: italic;
 		margin: 0 20px;
+		text-shadow: 2px 2px 2px rgba(50, 50, 50, .7);
 	}
 
 .presentation-row {
@@ -93,6 +96,10 @@ a.more {
 		margin: 0 0 2rem 2rem;
 		border-radius: 4px;
 		transition: all .3s;
+	}
+
+	a.row-item {
+		text-decoration: none;
 	}
 
 	@media screen and (max-width: 1024px) {
@@ -148,8 +155,16 @@ a.more {
 	text-decoration: none;
 	color: #FFF;
 	font-size: 1.12rem;
+	text-shadow: 1px 1px 2px rgba(50, 50, 50, .7);
 	padding: 1rem 1.5rem;
 	border: 2px solid #FFF;
+	border-radius: 4px;
+	background: rgba(50, 0, 0, 0);
+	transition: all .3s;
+}
+
+a.more:hover {
+	background: rgba(50, 0, 0, .6);
 }
 
 @media screen and (max-width: 1024px) {
