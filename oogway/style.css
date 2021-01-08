@@ -215,7 +215,7 @@ header#page-header {
 		}
 
 		.card-details:hover {
-			border: 1px solid rgba(14, 107, 182,.8);
+			border: 1px solid rgba(14, 107, 182,.6);
 			color: #0E6BB6;
 		}
 
