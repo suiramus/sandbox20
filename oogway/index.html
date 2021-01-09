@@ -12,6 +12,7 @@
 <header id="page-header">
 	<div id="header-wrap">
 		<div id="logo"><a href="#">Oogway</a></div>
+		<div id="menu-icon" onclick="menuFunction(this)" title="Open / Close Menu"></div>
 		<nav id="top-menu">
 			<ul>
 				<li><a href="#">Home</a></li>
@@ -21,8 +22,11 @@
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</nav>
+		
 	</div>
 </header>
+
+<!-- Hero Section -->
 
 <section class="hero">
 	<div class="hero-container">
@@ -34,6 +38,8 @@
 		</div>
 	</div>
 </section>
+
+<!-- Cards Section -->
 
 <section class="intro-cards">
 	<div class="cards-container">
@@ -85,6 +91,54 @@
 	</div>
 </section>
 
+<!-- Accordion Section -->
+<!-- Inspiration: https://support.undsgn.com/hc/en-us/categories/201692765 -->
+
+<section class="accordion-section">
+	<div class="accordion">
+		
+		<!-- Accordion Box -->
+		<div class="acc-box">
+			<h3 class="acc-title">What is HTML?</h3>
+			<div class="acc-content">
+				<p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. </p>
+			</div><!-- acc-content -->
+		</div><!-- acc-box -->
+
+		<!-- Accordion Box -->
+		<div class="acc-box">
+			<h3 class="acc-title">Cascading Style Sheets (CSS)</h3>
+			<div class="acc-content">
+				<p><strong>Cascading Style Sheets (CSS)</strong> is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
+				<p><strong>CSS is designed to enable the separation of presentation and content</strong>, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-box -->
+
+		<!-- Accordion Box -->
+		<div class="acc-box">
+			<h3 class="acc-title">Some words about JavaScript (JS)</h3>
+			<div class="acc-content">
+				<p><strong>JavaScript (JS)</strong> is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.</p>
+				<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Read more about JavaScript</a></p>
+			</div><!-- acc-content -->
+		</div><!-- acc-box -->
+
+		<!-- Accordion Box -->
+		<div class="acc-box">
+			<h3 class="acc-title">What is Programming?</h3>
+			<div class="acc-content">
+				<p><strong>Computer programming</strong> is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task. Programming involves tasks such as: analysis, generating algorithms, profiling algorithms' accuracy and resource consumption, and the implementation of algorithms in a chosen programming language (commonly referred to as coding).[1][2] The source code of a program is written in one or more languages that are intelligible to programmers, rather than machine code, which is directly executed by the central processing unit.</p>
+				<p><strong>The purpose of programming</strong> is to find a sequence of instructions that will automate the performance of a task (which can be as complex as an operating system) on a computer, often for solving a given problem. Proficient programming thus often requires expertise in several different subjects, including knowledge of the application domain, specialized algorithms, and formal logic.</p>
+				<p><a href="https://en.wikipedia.org/wiki/Computer_programming">Source: Wikipedia</a></p>
+			</div><!-- acc-content -->
+		</div><!-- acc-box -->
+
+	</div><!-- accordion -->
+</section>
+
+
+<!-- Footer -->
+
 <footer id="footer">
 	<div class="social-icons">
 		<a href="#"><img src="svg/footer/facebook.svg" alt="Facebook Icon"></a>
@@ -94,6 +148,50 @@
 	<p>Copyright 2020 &copy; Oogway. All rights reserved.</p>
 </footer>
 
+
+<script>
+// Oogway scripts
+// Hamburger menu
+function menuFunction(menuIcon) {
+	let topMenu = document.getElementById('top-menu');
+	menuIcon.classList.toggle("menu-close");
+	topMenu.classList.toggle("top-menu-open");
+}
+
+
+// Accordion
+// Source: https://codeorum.com/tutorials/simple-accordion-collapsible-element-with-vanilla-js-and-simple-animation-effect
+
+function initAcc(elem, option){
+    //addEventListener on mouse click
+    document.addEventListener('click', function (e) {
+        //check is the right element clicked
+        if (!e.target.matches(elem+' .acc-title')) return;
+        else{
+            //check if element contains active class
+            if(!e.target.parentElement.classList.contains('active-box')){
+                if(option==true){
+                     //if option true remove active class from all other accordions 
+                    var elementList = document.querySelectorAll(elem +' .acc-box');
+                    Array.prototype.forEach.call(elementList, function (e) {
+                        e.classList.remove('active-box');
+                    });
+                }    
+                //add active class on cliked accordion     
+                e.target.parentElement.classList.add('active-box');
+            }else{
+                //remove active class on cliked accordion     
+                e.target.parentElement.classList.remove('active-box');
+            }
+        }
+    });
+}
+ 
+//activate accordion function
+// initAcc('.accordion', true); // true: close other accordion on click
+initAcc('.accordion', false); // false: close other accordion individually
+
+</script>
 
 </body>
 </html>
