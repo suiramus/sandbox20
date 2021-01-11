@@ -34,6 +34,7 @@ img, video {
 :root {
 	--max-width: 1024px;
 	--media-query: 880px;
+	--primary-color: #2088D3;
 }
 
 body {
@@ -43,6 +44,10 @@ body {
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	color: var(--primary-color);
 }
 
 header#page-header {
@@ -205,6 +210,14 @@ header#page-header {
 		margin: 0;
 	}
 
+	@media screen and (max-width: 640px) {
+
+		.hero-title {
+			font-size: 44px;
+		}
+
+	} /* 640px media end */
+
 	.hero-subtitle {
 		opacity: .98;
 	}
@@ -234,10 +247,35 @@ header#page-header {
 /* Cards */
 
 .intro-cards {
-	background-image: linear-gradient(to right, #f1f1f1, #f7f7f7);
+	background-image: linear-gradient(to bottom, #ffffff, #f1f1f1, #ffffff);
 	padding: 100px 30px;
 	width: 100%;
 }
+
+.center-wrap {
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+
+.section-title {
+	display: block;
+	font-size: 40px;
+	font-weight: 200;
+	line-height: 1.1;
+	text-align: center;
+	margin-bottom: 70px;
+	color: var(--primary-color);
+}
+
+@media screen and (max-width: 640px) {
+
+	.section-title {
+		font-size: 30px;
+	}
+
+} /* 640px media end */
+
+
 
 	.cards-container {
 		max-width: var(--max-width);
@@ -301,7 +339,7 @@ header#page-header {
 
 		.card-details:hover {
 			border: 1px solid rgba(14, 107, 182,.2);
-			color: #0E6BB6;
+			color: var(--primary-color);
 		}
 
 @media screen and (max-width: 880px) {
@@ -337,7 +375,7 @@ header#page-header {
 .accordion-section {
 	padding: 100px 30px;
 	/*background: #F7F7F7;*/
-	background: rgba(228, 231, 242,.8);
+	background: rgba(228, 231, 242,.4);
 }
 
 .accordion {
@@ -370,11 +408,13 @@ header#page-header {
 	}
 
 	.acc-title:hover {
-		background: rgba(0, 0, 0, .03);
+		background: rgba(0, 0, 0, .02);
+		color: #2088D3;
 	}
 
 	.acc-title::after {
-		content: "+";
+		/*content: "+";*/
+		content: "\00002B";
 		position: absolute;
 		right: 0;
 		padding-right: 28px;
@@ -384,7 +424,8 @@ header#page-header {
 	}
 
 	.acc-box.active-box .acc-title::after {
-		content: "-";
+		/*content: "-";*/
+		content: "\002212";
 	}
 	
 	/* Accordion Content */
@@ -402,7 +443,7 @@ header#page-header {
 	/* Accordion Content .active */
    .accordion .acc-box.active-box .acc-content {
        padding: 20px 20px 24px;
-       border-top: 1px solid rgba(0, 0, 0, .06);;
+       border-top: 1px solid rgba(0, 0, 0, .06);
        opacity: 1;
        height: auto;
        max-height: 800px;
