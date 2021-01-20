@@ -1,3 +1,6 @@
+@import url("fonts/cairo/cairo-font.css");
+
+
 /* roboto-condensed-300 - latin */
 @font-face {
   font-family: 'Roboto Condensed';
@@ -69,8 +72,20 @@
 }
 
 
+/* Helper: https://google-webfonts-helper.herokuapp.com/fonts */
+
+
+
+
 body {
   font-family: "Roboto Condensed", serif;
   font-size: 18px;
   line-height: 1.5;
+}
+
+h1 {
+  font-family: "Cairo";
+  font-weight: 200;
+  font-size: 60px;
+  line-height: 1.2;
 }
