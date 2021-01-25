@@ -40,7 +40,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	color: var(--first-color);
 	font-weight: 400;
-	padding: 4rem 30px;
+	padding: 70px 30px;
 }
 
 .center-wrap {
@@ -74,14 +74,26 @@ body {
 .row-prices {
 	display: flex;
 	margin-top: 40px;
-	--width-2-col: calc(50% - 20px);
-	justify-content: space-between;
+	--width-2-col: calc(50% - 40px);
+	--width-2-col-mobile: calc(100% - 80px);
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .row-prices-2 .price-card {
-	/*max-width: var(--width-2-col);
-	flex-basis: var(--width-2-col);*/
+	max-width: var(--width-2-col);
+	flex-basis: var(--width-2-col);
+	margin-bottom: 30px;
 }
+
+	@media screen and (max-width: 700px) {
+	
+		.row-prices-2 .price-card {
+			max-width: var(--width-2-col-mobile);
+			flex-basis: var(--width-2-col-mobile);
+		}
+	
+	} /* 700px media end */
 
 
 .price-card {
@@ -89,7 +101,7 @@ body {
 	color: var(--first-color);
 	padding: 1.5rem;
 	border-radius: 4px;
-	box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+	box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.2);
 	display: flex;
 	flex-direction: column;
 }
@@ -125,13 +137,29 @@ body {
 
 .price-body {
 	display: flex;
-	flex-direction: column;
+	/*flex-direction: column;*/
+	justify-content: space-between;
 	padding: 20px 0 0;
 }
 
 	.price-box {
 		text-align: center;
+		flex-basis: 50%;
+		margin-right: 30px;
 	}
+
+	@media screen and (max-width: 1024px) {
+	
+		.price-body {
+			flex-direction: column;
+		}
+
+		.price-box {
+			flex-basis: 100%;
+			margin-right: 0;
+		}
+	
+	} /* 1024px media end */
 
 	.price-box sup {
 		top: -22px;
@@ -188,19 +216,19 @@ ul.price-list {
 ul.price-list li {
 	display: block;
 	position: relative;
-	margin-top: 6px;
+	margin-top: 8px;
 }
 
 ul.price-list li:before {
 	content: "";
 	display: inline-block;
-	margin-top: 2px;
 	margin-right: 8px;
-	width: 15px;
-	height: 15px;
+	width: 16px;
+	height: 16px;
 	background-image: url("check-icon.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center bottomș
 }
 
 
