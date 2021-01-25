@@ -14,7 +14,7 @@
 ## Price Cards   
 [https://suiramus.github.io/sandbox20/price/](https://suiramus.github.io/sandbox20/price/)   
 Screenshot (https://suiramus.github.io/sandbox20/price/price-cards.png)   
-![](price/price-cards.png)   
+![/sandbox20/price/](price/price-cards.png)   
 
 ---   
    
